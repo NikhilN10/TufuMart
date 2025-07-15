@@ -1,6 +1,6 @@
 
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { X, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
