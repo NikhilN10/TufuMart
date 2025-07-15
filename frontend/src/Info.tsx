@@ -1,11 +1,4 @@
-import React from "react";
-import Services from "./components/Services";
 
-type Props = {};
-
-const Info = (props: Props) => {
-  return <div>Info</div>;
-};
 
 const services = [
   {

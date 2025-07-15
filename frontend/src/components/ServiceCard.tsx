@@ -1,4 +1,3 @@
-import { Text } from "@mantine/core";
 
 type Props = {
   title: string;

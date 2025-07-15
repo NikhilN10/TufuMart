@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-type Props = {};
+
 
 interface HeroProps {
   setShowContactForm: (show: boolean) => void;
@@ -32,11 +32,7 @@ const Hero: React.FC<HeroProps> = ({ setShowContactForm }) => {
     { value: "24/7", label: "Support Available" },
   ];
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
+ 
   return (
     <section
       id="home"

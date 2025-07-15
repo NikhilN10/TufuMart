@@ -7,16 +7,12 @@ import {
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Footer from "./components/Footer";
 import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
 import TuffuMartFooter from "./components/TuffuMartFooter";
-import NewNbar from "./components/NewNbar";
 import { useState } from "react";
 
-interface NavbarProps {
-  setShowContactForm: React.Dispatch<React.SetStateAction<boolean>>;
-}
+
 const App: React.FC = () => {
   const [showContactForm, setShowContactForm] = useState(false);
 

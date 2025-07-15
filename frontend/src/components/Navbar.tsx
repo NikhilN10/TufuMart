@@ -4,7 +4,7 @@ interface NavbarProps {
   scrollY: number;
   setShowContactForm: (show: boolean) => void;
 }
-const Navbar: React.FC<NavbarProps> = ({ setShowContactForm }) => {
+const Navbar: React.FC<NavbarProps> = () => {
   const location = useLocation();
 
   const navLinkClass = (path: string) =>

@@ -1,8 +1,7 @@
 import { MagicCard } from "../components/magicui/magic-card";
-import { Marquee } from "../components/magicui/marquee";
 import ServiceCard from "./ServiceCard";
 import { services } from "../Info"; // Adjust the import path as necessary
-import { motion } from "framer-motion";
+
 
 export default function Services() {
   return (
