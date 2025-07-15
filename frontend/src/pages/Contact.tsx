@@ -1,4 +1,4 @@
-import axios from "axios";
+
 
 import React, { useRef, useState } from "react";
 import { X, Send } from "lucide-react";
@@ -11,7 +11,6 @@ interface ContactFormModalProps {
 }
 
 const Contact: React.FC<ContactFormModalProps> = ({ show, onClose }) => {
-  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
