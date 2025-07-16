@@ -20,3 +20,4 @@ const services = [
     image: "/guide-to-inventory-planning-with-ai-1130x641.jpg", // ✅
   },
 ];
+export { services };
