@@ -11,12 +11,13 @@ const Hero: React.FC<HeroProps> = ({ setShowContactForm }) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   // Update these paths to match your local images
-  const heroBackgrounds = [
-    "../../public/heroback2.jpg",
-    "../../public/Inventory.jpg",
-    "../../public/Research.jpg",
-    "../../public/Car.jpg",
-  ];
+ const heroBackgrounds = [
+  "/heroback2.jpg",
+  "/Inventory.jpg",
+  "/Research.jpg",
+  "/Car.jpg",
+];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
