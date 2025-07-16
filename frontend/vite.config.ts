@@ -1,8 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_PATH || "/"
+  build: {
+    rollupOptions: {
+      // Force Rollup to use JS fallback instead of native bindings
+      external: [],
+    },
+  },
+  optimizeDeps: {
+    exclude: ['@rollup/rollup-linux-x64-gnu'],
+  },
+  define: {
+    'process.env.ROLLUP_NO_NATIVE': '"1"',
+  },
 })
