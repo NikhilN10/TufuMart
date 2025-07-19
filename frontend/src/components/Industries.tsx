@@ -1,0 +1,52 @@
+// components/Industries.tsx
+
+import { useState } from "react";
+import IndustryCard from "./IndustryCard";
+import IndustryModal from "./IndustryModal";
+import { industries } from "../Info";
+import type { Industry } from "../type/Industry";
+
+export default function Industries() {
+  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCardClick = (industry: Industry) => {
+    setSelectedIndustry(industry);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedIndustry(null);
+  };
+
+  return (
+    <div className="py-16 bg-gray-50 min-h-screen">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          Industries We Serve
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {industries.map((industry, index) => (
+            <IndustryCard 
+              key={index}
+              title={industry.title}
+              description={industry.description}
+              image={industry.image}
+              onClick={() => handleCardClick(industry)}
+            />
+          ))}
+        </div>
+
+       
+      </div>
+
+      <IndustryModal 
+        industry={selectedIndustry}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
+    </div>
+  );
+}

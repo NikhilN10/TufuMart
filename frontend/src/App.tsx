@@ -11,6 +11,7 @@ import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
 import TuffuMartFooter from "./components/TuffuMartFooter";
 import { useState } from "react";
+import Industries from "./components/Industries";
 
 
 const App: React.FC = () => {
@@ -53,7 +54,7 @@ const App: React.FC = () => {
         show={showContactForm}
         onClose={() => setShowContactForm(false)}
       />
-
+      <Industries/>
       <TuffuMartFooter />
     </Router>
   );
