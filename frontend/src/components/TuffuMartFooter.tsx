@@ -1,4 +1,4 @@
-
+import { industries } from "../Info";
 import {
   Building,
   Phone,
@@ -39,7 +39,7 @@ const TuffuMartFooter = () => {
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
@@ -100,7 +100,7 @@ const TuffuMartFooter = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Our Services */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-white">Our Services</h3>
             <ul className="space-y-3">
@@ -111,6 +111,24 @@ const TuffuMartFooter = () => {
                 >
                   <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
                   {service}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Industries We Serve */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold text-white">
+              Industries We Serve
+            </h3>
+            <ul className="space-y-3">
+              {industries.map((industry, index) => (
+                <li
+                  key={index}
+                  className="text-gray-300 hover:text-white transition-colors flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                  {industry.title}
                 </li>
               ))}
             </ul>
@@ -160,33 +178,6 @@ const TuffuMartFooter = () => {
           </div>
         </div>
       </div>
-
-      {/* Newsletter Section */}
-      {/* <div className="border-t border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Stay Updated
-              </h3>
-              <p className="text-gray-300">
-                Get the latest updates on procurement trends and industry
-                insights
-              </p>
-            </div>
-            <div className="flex w-full md:w-auto max-w-md">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-600 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-              />
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-r-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 bg-gray-900">

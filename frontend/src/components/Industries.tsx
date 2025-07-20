@@ -1,14 +1,14 @@
-// components/Industries.tsx
-
 import { useState } from "react";
 import IndustryCard from "./IndustryCard";
 import IndustryModal from "./IndustryModal";
 import { industries } from "../Info";
 import type { Industry } from "../type/Industry";
+import Contact from "../pages/Contact";
 
 export default function Industries() {
   const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const handleCardClick = (industry: Industry) => {
     setSelectedIndustry(industry);
@@ -20,6 +20,17 @@ export default function Industries() {
     setSelectedIndustry(null);
   };
 
+  // This function will be passed to IndustryModal to open the contact form
+  const openContactModal = () => {
+    setShowContactForm(true);
+    // Optionally close the industry modal when opening contact form
+    setIsModalOpen(false);
+  };
+
+  const closeContactForm = () => {
+    setShowContactForm(false);
+  };
+
   return (
     <div className="py-16 bg-gray-50 min-h-screen">
       <div className="container mx-auto px-4">
@@ -29,7 +40,7 @@ export default function Industries() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {industries.map((industry, index) => (
-            <IndustryCard 
+            <IndustryCard
               key={index}
               title={industry.title}
               description={industry.description}
@@ -38,15 +49,23 @@ export default function Industries() {
             />
           ))}
         </div>
-
-       
       </div>
 
-      <IndustryModal 
+      {/* Industry modal */}
+      <IndustryModal
         industry={selectedIndustry}
         isOpen={isModalOpen}
         onClose={closeModal}
+        openContactModal={openContactModal}
       />
+
+      {/* Contact form modal — create and import your ContactFormModal component */}
+      {showContactForm && (
+        <Contact
+          show={showContactForm}
+          onClose={closeContactForm}
+        />
+      )}
     </div>
   );
 }
